@@ -32,6 +32,7 @@ const transactionSchema = new mongoose.Schema(
       type: mongoose.Decimal128,
       required: true,
     },
+    commision: {type: mongoose.Decimal128},
     summary: { type: String, required: true },
     trnxSummary:{ type: String, required: true }
   },

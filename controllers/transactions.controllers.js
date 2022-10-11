@@ -8,6 +8,7 @@ const fs = require('fs');
 const nodemailer = require('nodemailer');
 const puppeteer = require('puppeteer');
 const Flutterwave = require("flutterwave-node-v3");
+const { info } = require("console");
 
 const flw = new Flutterwave(
   process.env.FLW_PUBLIC_KEY,
