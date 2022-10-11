@@ -170,7 +170,7 @@ transporter.sendMail(mailOptions, (error, info) => {
     await session.commitTransaction();
     session.endSession();
  
-    res.redirect('http://localhost:4500/')
+    res.redirect('https://bookie.onrender.com/')
   } catch (err) {
     await session.abortTransaction();
     session.endSession();
@@ -258,7 +258,7 @@ exports.save = async (req, res, next) => {
           tx_ref,
           amount: amount,
           currency: currency,
-          redirect_url: "http://localhost:4500/deposit",
+          redirect_url: "https://bookie.onrender.com/deposit",
          
           customer: {
             email,
