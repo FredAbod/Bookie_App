@@ -249,10 +249,11 @@ exports.save = async (req, res, next) => {
       });
     }
     if (amount< 10000) {
-      const chargeAmount = 0.1 * amount
-      // console.log(chargeAmount);
+      const chargeAmount = 0.1 * amount;
+    amount = chargeAmount + amount;
     } else {
-      chargeAmount = 0.15 * amount
+      let chargeAmount = 0.15 * amount;
+      amount = chargeAmount + amount;
     }
     const got = require("got");
     const response = await got
@@ -262,7 +263,7 @@ exports.save = async (req, res, next) => {
         },
         json: {
           tx_ref,
-          amount: chargeAmount,
+          amount: amount,
           currency: currency,
           redirect_url: "https://bookie.onrender.com/deposit",
          
