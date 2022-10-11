@@ -35,15 +35,15 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.get("/", (req, res) => {
+  res.render("home");
+});
 app.use("/auth", authRoutes);
 app.use("/profile", profileRoutes);
 app.use("/admin", adminRoutes);
 app.use("/wallets", walletRoutes);
 app.use("/transaction", transactionRoutes);
 
-app.get("/", (req, res) => {
-  res.render("home");
-});
 app.get('/deposit',  (req, res)=> {
   res.render('deposit');
 })
