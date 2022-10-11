@@ -12,7 +12,7 @@ const authCheck = (req, res, next) =>{
 }
 
 router.get('/',authCheck,  (req, res)=> {
-    res.render('profile', { user: req.user});
+    res.render('profile');
 })
 router.get('/getservices', allServices)
 router.get('/wallet', getUserWallets)

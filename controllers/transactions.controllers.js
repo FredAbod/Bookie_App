@@ -248,6 +248,12 @@ exports.save = async (req, res, next) => {
           "Please Fill All Fields",
       });
     }
+    if (amount< 10000) {
+      const chargeAmount = 0.1 * amount
+      // console.log(chargeAmount);
+    } else {
+      chargeAmount = 0.15 * amount
+    }
     const got = require("got");
     const response = await got
       .post("https://api.flutterwave.com/v3/payments", {
@@ -256,7 +262,7 @@ exports.save = async (req, res, next) => {
         },
         json: {
           tx_ref,
-          amount: amount,
+          amount: chargeAmount,
           currency: currency,
           redirect_url: "https://bookie.onrender.com/deposit",
          

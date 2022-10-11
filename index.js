@@ -3,6 +3,9 @@ const express = require("express");
 const morgan = require("morgan");
 const apicache = require("apicache");
 const app = express();
+// const path = require('path');
+// const cookieParser = require('cookie-Parser')
+// const session = require('express-session');
 const passportSetup = require("./config/passport.setup");
 const cookieSession = require("cookie-session");
 const passport = require("passport");
@@ -34,6 +37,7 @@ app.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(passport.authenticate('session'));
 
 app.get("/", (req, res) => {
   res.render("home");

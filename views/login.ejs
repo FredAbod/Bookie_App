@@ -43,6 +43,52 @@
                 padding: 10px;
                 background: #ff5353;
             }
+            a.facebook {
+	background: #4267b2;
+}button {
+	display: block;
+	padding: 10px;
+	width: 100%;
+	border-radius: 3px;
+	background: #d83f45;
+	font-size: 14px;
+	font-weight: 700;
+	color: white;
+	cursor: pointer;
+}
+
+a.button {
+	box-sizing: border-box;
+	display: block;
+	padding: 10px;
+	width: 100%;
+	border-radius: 3px;
+	background: #000;
+	font-size: 14px;
+	font-weight: 700;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+}
+
+a.google {
+	background: #4787ed;
+}
+
+a.facebook {
+	background: #4267b2;
+}
+
+button:hover {
+	background-color: #c83f45;
+}
+
+h1 {
+	margin: 0 0 20px 0;
+	padding: 0 0 5px 0;
+	font-size: 24px;
+	font-weight: 500;
+}
         </style>
     </head>
     <body>
@@ -58,6 +104,7 @@
         </header>
         <main>
             <a class="google-btn" href="/auth/google">Google+</a>
+            <a class="button facebook" href="/login/federated/facebook">Sign in with Facebook</a>
         </main>
     </body>
 </html>
