@@ -248,13 +248,13 @@ exports.save = async (req, res, next) => {
           "Please Fill All Fields",
       });
     }
-    if (amount< 10000) {
-      const chargeAmount = 0.1 * amount;
-    amount = chargeAmount + amount;
-    } else {
-      let chargeAmount = 0.15 * amount;
-      amount = chargeAmount + amount;
-    }
+    // if (amount< 10000) {
+    //   const chargeAmount = 0.1 * amount;
+    // amount = chargeAmount + amount;
+    // } else {
+    //   let chargeAmount = 0.15 * amount;
+    //   amount = chargeAmount + amount;
+    // }
     const got = require("got");
     const response = await got
       .post("https://api.flutterwave.com/v3/payments", {
